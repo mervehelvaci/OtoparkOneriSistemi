@@ -1,6 +1,6 @@
-import React,{ useState,useEffect }from "react";
-import { Table } from "reactstrap";
+import React ,{ useState,useEffect }from "react";
 import Pagination from "./Pagination";
+import TableCompanent from "./TableCompanent";
 
 
 export default function ProductList() {
@@ -28,7 +28,7 @@ export default function ProductList() {
   return (
     <div>
       <h2>{productInfo.title}</h2>
-      <Table data={products} column={column} />
+      <TableCompanent data={products} column={column} />
       <Pagination />
     </div>
   );

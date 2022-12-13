@@ -1,7 +1,7 @@
 import React from "react";
-import { CardColumns, Table } from "reactstrap";
+import { Table } from "reactstrap";
 
-const Table = () => {
+const TableCompanent = ({ data, column }) => {
   return (
     <Table className="table">
       <thead>
@@ -31,4 +31,5 @@ const TableRow = ({ item, column }) => (
     })}
   </tr>
 );
-export default Table;
+
+export default TableCompanent;

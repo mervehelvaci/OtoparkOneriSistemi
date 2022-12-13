@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import Pagination from "./Pagination";
 import TableCompanent from "./TableCompanent";
 
-export default function ProductList() {
-  const [products, setProducts] = useState([]);
-  let productInfo = { title: "Product List" };
+export default function EmployeeList() {
+  const [employees, setEmployees] = useState([]);
+  let employeeInfo = { title: "Employee List" };
   const [currentPage, setCurrentPage] = useState(1); //hangi sayfadan baslayacak bunu belirttik
   const [employeesPerPage] = useState(4); //sayfada kaç veri listelenecek onu belirttik
 
   /*kategorileri doldur */
   useEffect(() => {
-    getProducts();
+    getEmployees();
   });
 
   /*json ile verileri getirmek*/
-  const getProducts = () => {
+  const getEmployees = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((data) => setEmployees(data));
   };
 
   const column = [
@@ -30,14 +30,14 @@ export default function ProductList() {
 
   const indexOfLastEmployee = currentPage * employeesPerPage;
   const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
-  const currentEmployees = products.slice(
+  const currentEmployees = employees.slice(
     indexOfFirstEmployee,
     indexOfLastEmployee
   );
-  const totalPagesNum = Math.ceil(products.length / employeesPerPage);
+  const totalPagesNum = Math.ceil(employees.length / employeesPerPage);
   return (
     <div>
-      <h2>{productInfo.title}</h2>
+      <h2>{employeeInfo.title}</h2>
       <TableCompanent data={currentEmployees} column={column} />
       <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} />
     </div>

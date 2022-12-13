@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import ProductList from "./ProductList";
 import CategoryList from "./CategoryList";
 import Navi from "./Navi";
 import { Col, Container, Row } from "reactstrap";
@@ -8,7 +7,6 @@ import { Outlet } from "react-router-dom";
 export default class Home extends Component {
   state = {
     currentCategory: "" /*mevcut kategori*/,
-    products: [],
   };
 
   render() {

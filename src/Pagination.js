@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Pagination = () => {
-  const pages = 5;
+const Pagination = ({pages,setCurrentPage}) => {
   const numOfPages = [];
 
   for (let i = 1; i <= pages; i++) {
     numOfPages.push(i);
   }
   const [currentButton, setCurrentButton] = useState(1);
+
+  useEffect(()=> {
+    setCurrentPage(currentButton)
+  },[currentButton,setCurrentPage])
   return (
     <div className="clearfix">
       <div className="hinttext">
@@ -18,7 +21,7 @@ const Pagination = () => {
           className={currentButton === 1 ? "page-item disabled" : "page-item"}
         >
           <a
-            href="#"
+            href="#!"
             className="page-link"
             onClick={() =>
               setCurrentButton((prev) => (prev === 1 ? prev : prev - 1))
@@ -31,10 +34,12 @@ const Pagination = () => {
           return (
             <li
               key={index}
-              className={currentButton === page ? "page-item-active" : "page-item"}
+              className={
+                currentButton === page ? "page-item-active" : "page-item"
+              }
             >
               <a
-                href="#"
+                href="#!"
                 class="page-link"
                 onClick={() => setCurrentButton(page)}
               >
@@ -51,7 +56,7 @@ const Pagination = () => {
           }
         >
           <a
-            href="#"
+            href="#!"
             className="page-link"
             onClick={() =>
               setCurrentButton((prev) =>

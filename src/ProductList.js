@@ -8,11 +8,11 @@ export default function ProductList() {
   let productInfo = { title: "Product List" };
   /*kategorileri doldur */
   useEffect(() => {
-    this.getProducts();
+    getProducts();
   });
 
   /*json ile verileri getirmek*/
-  getProducts = () => {
+  const getProducts = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => setProducts(data));

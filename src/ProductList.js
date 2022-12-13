@@ -1,7 +1,7 @@
-import React from "react";
+import React,{ useState,useEffect }from "react";
 import { Table } from "reactstrap";
 import Pagination from "./Pagination";
-import { useState,useEffect } from "react";
+
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);

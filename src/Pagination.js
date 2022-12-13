@@ -13,7 +13,7 @@ const Pagination = () => {
       <div className="hinttext">
         Showing <b>5</b> out of <b>25</b> entries
       </div>
-      <ul class="pagination">
+      <ul className="pagination">
         <li
           className={currentButton === 1 ? "page-item disabled" : "page-item"}
         >
@@ -31,7 +31,7 @@ const Pagination = () => {
           return (
             <li
               key={index}
-              class={currentButton === page ? "page-item-active" : "page-item"}
+              className={currentButton === page ? "page-item-active" : "page-item"}
             >
               <a
                 href="#"

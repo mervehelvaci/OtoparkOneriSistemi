@@ -38,7 +38,7 @@ export default function EmployeeList() {
   return (
     <div>
       <h2>{employeeInfo.title}</h2>
-      <TableCompanent data={currentEmployees} column={column} />
+      <TableCompanent searchable={true} data={currentEmployees} column={column} />
       <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} />
     </div>
   );

@@ -4,12 +4,18 @@ import { Table, Input } from "reactstrap";
 
 const TableCompanent = ({ data, column, searchable }) => {
   const [search, setSearch] = useState("");
+  const [tempData, setTempdata] = useState(data);
+
   // const filteredData = data.filter((item) =>
   //   item
   //     .toString()
   //     .toLocaleLowerCase("TR")
   //     .includes(search.toLocaleLowerCase("TR"))
   // );
+
+  const onFilterData = (value) =>{
+    setTempdata(data.filter(item => item.name.contains(value)))
+  }
 
   return (
     <div>
@@ -21,7 +27,7 @@ const TableCompanent = ({ data, column, searchable }) => {
             placeholder="Enter search"
             type="text"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => onFilterData(e.target.value)}
           />
         </div>
       )}
@@ -34,7 +40,7 @@ const TableCompanent = ({ data, column, searchable }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index, key) => (
+          {tempData.map((item, index, key) => (
             <TableRow key={key} item={item} column={column} />
           ))}
         </tbody>

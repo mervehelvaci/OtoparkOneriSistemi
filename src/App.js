@@ -17,8 +17,8 @@ function App() {
         <Route path="/singup" element={<SingUp />} />
         <Route path="/home" element={<Home />}>
           {/* <Route path="/categorylist" element={<CategoryList />} /> */}
-          <Route path="/home/:employeelist" element={<EmployeeList />} />
-          <Route path="/home/:iletisim" element={<Iletisim />} />
+          <Route path="/home/EmployeeList" element={<EmployeeList />} />
+          <Route path="/home/Iletisim" element={<Iletisim />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

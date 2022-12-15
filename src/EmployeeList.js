@@ -11,7 +11,7 @@ export default function EmployeeList() {
   /*kategorileri doldur */
   useEffect(() => {
     getEmployees();
-  });
+  },[]);
 
   /*json ile verileri getirmek*/
   const getEmployees = () => {

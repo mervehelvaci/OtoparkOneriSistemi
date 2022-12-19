@@ -5,6 +5,7 @@ import { Table, Input } from "reactstrap";
 const TableCompanent = ({ data, column, searchable }) => {
   const [search, setSearch] = useState("");
   const [tempData, setTempdata] = useState(data);
+  const [tableFilter, setTableFilter] = useState([]);
 
   // const filteredData = data.filter((item) =>
   //   item
@@ -13,9 +14,24 @@ const TableCompanent = ({ data, column, searchable }) => {
   //     .includes(search.toLocaleLowerCase("TR"))
   // );
 
-  const onFilterData = (value) =>{
-    setTempdata(data.filter(item => item.name.contains(value)))
-  }
+  // const onFilterData = (value) =>{
+  //   setTempdata(data.filter(item => item.name.contains(value)))
+  // }
+
+  const onFilterData = (e) => {
+    if (e.target.value !== "") {
+      setSearch(e.target.value);
+      const filterTable = data.filter((o) =>
+        Object.keys(o).some((k) =>
+          String(o[k]).toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+      setTableFilter([...filterTable]);
+    } else {
+      setSearch(e.target.value);
+      setTempdata([...tempData]);
+    }
+  };
 
   return (
     <div>
@@ -27,7 +43,8 @@ const TableCompanent = ({ data, column, searchable }) => {
             placeholder="Enter search"
             type="text"
             value={search}
-            onChange={(e) => onFilterData(e.target.value)}
+            onChange={onFilterData}
+            //onChange={(e) => onFilterData(e.target.value)}
           />
         </div>
       )}
@@ -40,17 +57,24 @@ const TableCompanent = ({ data, column, searchable }) => {
           </tr>
         </thead>
         <tbody>
-          {tempData.map((item, index, key) => (
+          {search.lenght > 0
+            ? tableFilter.map((item, index) => (
+                <TableRow  item={item} column={column} />
+              ))
+            : tempData.map((item, index) => (
+                <TableRow  item={item} column={column} />
+              ))}
+          {/* {tempData.map((item, index, key) => (
             <TableRow key={key} item={item} column={column} />
-          ))}
+          ))} */}
         </tbody>
       </Table>
     </div>
   );
 };
 const TableHeadItem = ({ key, item }) => <th key={key}>{item.heading}</th>;
-const TableRow = ({ key, item, column }) => (
-  <tr key={key}>
+const TableRow = ({  item, column }) => (
+  <tr >
     {column.map((columnItem, index) => {
       if (columnItem.value.includes(".")) {
         const itemSplit = columnItem.value.split(".");
@@ -60,5 +84,4 @@ const TableRow = ({ key, item, column }) => (
     })}
   </tr>
 );
-
 export default TableCompanent;

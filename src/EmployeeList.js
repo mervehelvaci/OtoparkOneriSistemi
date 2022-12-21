@@ -21,7 +21,7 @@ export default function EmployeeList() {
   };
 
   const column = [
-    { heading: "#", value: "id" },
+    { heading: "id", value: "id" },
     { heading: "Name", value: "name" },
     { heading: "User Name", value: "username" },
     { heading: "Email", value: "email" },

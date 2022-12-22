@@ -12,16 +12,19 @@ const TableCompanent = ({ data, column, searchable }) => {
     setTempdata(data);
   }, [data]);
 
-  //Tabloda Search işlemini yapar
+  //Tabloda Search işlemini yapar. Name ve UserName alanlarında yapar
   const onFilterData = (e) => {
     if (e.target.value !== "") {
       setSearch(e.target.value);
-      const filterTable = data.filter((item) =>
-        item.name.toLowerCase().startsWith(e.target.value.toLowerCase())
+      const filterTable = data.filter(
+        (item) =>
+          item.name.toLowerCase().startsWith(e.target.value.toLowerCase()) ||
+          item.username.toLowerCase().startsWith(e.target.value.toLowerCase())
       );
       setTempdata(filterTable);
     } else {
-      setSearch(e.target.value);
+      //Search silinince tekrar tabloyu yenileyecek 
+      window.location.reload(true);
       setTempdata(tempData);
     }
   };
@@ -69,13 +72,6 @@ const TableCompanent = ({ data, column, searchable }) => {
           </tr>
         </thead>
         <tbody>
-          {/* {search.length > 0
-            ? tableFilter.map((item, index) => (
-                <TableRow  item={item} column={column} />
-              ))
-            : tempData.map((item, index) => (
-                <TableRow  item={item} column={column} />
-              ))}*/}
           {tempData.map((item) => (
             <TableRow item={item} column={column} />
           ))}

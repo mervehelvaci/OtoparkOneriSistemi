@@ -1,17 +1,18 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Table, Input } from "reactstrap";
 
 const TableCompanent = ({ data, column, searchable }) => {
   const [search, setSearch] = useState("");
-  const [tempData, setTempdata] = useState(data);
+  const [tempData, setTempdata] = useState([]);
   const [order, setOrder] = useState("ASC");
-  //const [tableFilter, setTableFilter] = useState([]);
 
-  // const onFilterData = (value) =>{
-  //   setTempdata(data.filter(item => item.name.contains(value)))
-  // }
+  //Props gelen değer useStatete direk kullanılmaz. UseEffect sayesinde gelen verileri alırız.
+  useEffect(() => {
+    setTempdata(data);
+  }, [data]);
 
+  //Tabloda Search işlemini yapar
   const onFilterData = (e) => {
     if (e.target.value !== "") {
       setSearch(e.target.value);
@@ -22,10 +23,10 @@ const TableCompanent = ({ data, column, searchable }) => {
     } else {
       setSearch(e.target.value);
       setTempdata(tempData);
-      //setTempdata([...tempData]);
     }
   };
 
+  //Tabloda sıralama işlemini yapar
   const sorting = (col) => {
     if (order === "ASC") {
       const sorted = [...data].sort((a, b) =>
@@ -45,6 +46,7 @@ const TableCompanent = ({ data, column, searchable }) => {
 
   return (
     <div>
+      {/* Search için true degeri gelirse Input gösterir */}
       {searchable && (
         <div>
           <Input
@@ -61,32 +63,34 @@ const TableCompanent = ({ data, column, searchable }) => {
       <Table className="table">
         <thead>
           <tr>
-            {column.map((item, index, key) => (
-              <TableHeadItem key={key} item={item} />
+            {column.map((item) => (
+              <TableHeadItem item={item} sorting={sorting} />
             ))}
           </tr>
         </thead>
         <tbody>
-          {/* {search.lenght > 0
+          {/* {search.length > 0
             ? tableFilter.map((item, index) => (
                 <TableRow  item={item} column={column} />
               ))
             : tempData.map((item, index) => (
                 <TableRow  item={item} column={column} />
               ))}*/}
-          {tempData.map((key, item, column) => (
-            <TableRow key={key} item={item} column={column} />
+          {tempData.map((item) => (
+            <TableRow item={item} column={column} />
           ))}
         </tbody>
       </Table>
     </div>
   );
 };
-const TableHeadItem = ({ key, item }) => (
-  <th key={key} onClick={() => sorting(item.value)}>
-    {item.heading}
-  </th>
-);
+
+//Tabloya gelen başlıkları doldurur ve sıralama on click ile tetiklenir
+const TableHeadItem = ({ item, sorting }) => {
+  return <th onClick={() => sorting(item.value)}>{item.heading}</th>;
+};
+
+//Tablo içeriğini doldurur
 const TableRow = ({ key, item, column }) => (
   <tr>
     {column.map((columnItem, index) => {

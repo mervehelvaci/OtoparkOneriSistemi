@@ -1,6 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Table, Input } from "reactstrap";
+import {
+  AiOutlineSortAscending,
+  // AiOutlineSortDescending,
+} from "react-icons/ai";
 
 const TableCompanent = ({ data, column, searchable }) => {
   const [search, setSearch] = useState("");
@@ -23,7 +27,7 @@ const TableCompanent = ({ data, column, searchable }) => {
       );
       setTempdata(filterTable);
     } else {
-      //Search silinince tekrar tabloyu yenileyecek 
+      //Search silinince tekrar tabloyu yenileyecek
       window.location.reload(true);
       setTempdata(tempData);
     }
@@ -45,13 +49,18 @@ const TableCompanent = ({ data, column, searchable }) => {
       setTempdata(sorted);
       setOrder("ASC");
     }
+    // if (order === "NRML") {
+    //   const sorted = [...data];
+    //   setTempdata(sorted);
+    //   setOrder("ASC");
+    // }
   };
 
   return (
     <div>
       {/* Search için true degeri gelirse Input gösterir */}
       {searchable && (
-        <div>
+        <div class="d-flex justify-content-end">
           <Input
             id="search"
             name="search"
@@ -63,17 +72,22 @@ const TableCompanent = ({ data, column, searchable }) => {
           />
         </div>
       )}
+
       <Table className="table">
         <thead>
           <tr>
             {column.map((item) => (
-              <TableHeadItem item={item} sorting={sorting} />
+              <>
+                <TableHeadItem item={item} sorting={sorting} />
+              </>
             ))}
           </tr>
         </thead>
         <tbody>
           {tempData.map((item) => (
-            <TableRow item={item} column={column} />
+            <>
+              <TableRow item={item} column={column} />
+            </>
           ))}
         </tbody>
       </Table>
@@ -83,7 +97,11 @@ const TableCompanent = ({ data, column, searchable }) => {
 
 //Tabloya gelen başlıkları doldurur ve sıralama on click ile tetiklenir
 const TableHeadItem = ({ item, sorting }) => {
-  return <th onClick={() => sorting(item.value)}>{item.heading}</th>;
+  return (
+    <th onClick={() => sorting(item.value)}>
+      {item.heading} <AiOutlineSortAscending size="30" color="black" />
+    </th>
+  );
 };
 
 //Tablo içeriğini doldurur

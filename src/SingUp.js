@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input} from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function SingUp() {
   const [user, setUser] = useState({
@@ -57,8 +58,15 @@ function SingUp() {
 
   return (
     <div className="container ">
-      <div className="row height:100vh">
-        <div className="col-md-3 mx-auto my-auto">
+      <div
+        className="mx-auto"
+        style={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <div className="col-md-3 mx-auto">
           <h2>Sing Up </h2>
           <Form className="bg-blue" onSubmit={onSingUp}>
             <FormGroup>
@@ -116,11 +124,19 @@ function SingUp() {
                 onChange={(e) => setUser({ ...user, website: e.target.value })}
               />
             </FormGroup>
-            <Button type="submit" className="btn btn-info btn-lg btn-block" onClick={onSingUp}>
+            <Button
+              type="submit"
+              variant="success"
+              onClick={onSingUp} style={{ display: "flex", justifyContent: "end" }}
+            >
               Save
             </Button>
           </Form>
-          {error !== "" ? <div classNameName="error text-danger">{error}</div> : ""}
+          {error !== "" ? (
+            <div className="text-danger">{error}</div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

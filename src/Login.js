@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import { useNavigate, Link } from "react-router-dom";
 import { Stack } from "react-bootstrap";
 
@@ -42,17 +42,17 @@ function Login() {
   };
 
   return (
-    <div
-    className="mx-auto"
-      style={{
-        height: "100vh",
-        display: "flex",
-        alignItems: "center"
-      }}
-    >
-      <div className="container">
+    <div className="container">
+      <div
+        className="mx-auto"
+        style={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <div className="col-md-3 mx-auto">
-          <h2 className="text-justify">Login</h2>
+          <h2 style={{ display: "flex", justifyContent: "center" }}>Login</h2>
           <Form className="bg-blue" onSubmit={onLogin}>
             <FormGroup>
               <Label for="exampleName">Name</Label>
@@ -77,16 +77,18 @@ function Login() {
               />
             </FormGroup>
             <FormGroup>
-              <Stack direction="horizontal" gap={3} style={{display: "flex", justifyContent:"center"}}>
-              
-              <Button variant="light">
-                <Link to="/SingUp">Sing Up</Link>
-              </Button>
-              <Button variant="success" onClick={onLogin}>
-                Login
-              </Button>
+              <Stack
+                direction="horizontal"
+                gap={3}
+                style={{ display: "flex", justifyContent: "end" }}
+              >
+                <Button variant="light">
+                  <Link to="/SingUp">Sing Up</Link>
+                </Button>
+                <Button variant="success" onClick={onLogin}>
+                  Login
+                </Button>
               </Stack>
-             
             </FormGroup>
           </Form>
           {error !== "" ? <div className="error text-danger">{error}</div> : ""}

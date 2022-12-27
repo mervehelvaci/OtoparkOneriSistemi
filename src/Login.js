@@ -68,7 +68,7 @@ function Login() {
               />
             </FormGroup>
             <FormGroup>
-              <Button type="submit" class="btn btn-primary" onClick={onLogin}>
+              <Button type="submit"  class="btn btn-primary" onClick={onLogin}>
                 Login
               </Button>
               <Button class="btn btn-secondary">

@@ -3,8 +3,8 @@ import Pagination from "./Pagination";
 import TableCompanent from "./TableCompanent";
 
 export default function EmployeeList() {
-  const [employees, setEmployees] = useState([]);
   let employeeInfo = { title: "Employee List" };
+  const [employees, setEmployees] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); //hangi sayfadan baslayacak bunu belirttik
   const [employeesPerPage] = useState(4); //sayfada kaç veri listelenecek onu belirttik
 
@@ -20,6 +20,7 @@ export default function EmployeeList() {
       .then((data) => setEmployees(data));
   };
 
+  //Tabloya gönderilen Heading
   const column = [
     { heading: "id", value: "id" },
     { heading: "Name", value: "name" },
@@ -28,18 +29,20 @@ export default function EmployeeList() {
     { heading: "City", value: "address.city" },
   ];
 
+  //Her sayfada gösterilece kişileri bölerek ayırdık
   const indexOfLastEmployee = currentPage * employeesPerPage;
   const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
   const currentEmployees = employees.slice(
     indexOfFirstEmployee,
     indexOfLastEmployee
   );
+  //Toplam sayfa sayısını belirledik
   const totalPagesNum = Math.ceil(employees.length / employeesPerPage);
   return (
     <div>
       <h2>{employeeInfo.title}</h2>
       <TableCompanent searchable={true} data={currentEmployees} column={column} />
-      <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} />
+      <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} perPage={employeesPerPage} />
     </div>
   );
 }

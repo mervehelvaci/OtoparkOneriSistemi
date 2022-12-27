@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import React, { Component } from "react";
+import React from "react";
 import { Stack } from "react-bootstrap";
 
-const Pagination = ({ pages, setCurrentPage }) => {
+const Pagination = ({ pages, setCurrentPage, perPage }) => {
   const numOfPages = [];
 
   for (let i = 1; i <= pages; i++) {
@@ -13,13 +13,17 @@ const Pagination = ({ pages, setCurrentPage }) => {
   useEffect(() => {
     setCurrentPage(currentButton);
   }, [currentButton, setCurrentPage]);
+
   return (
-    <>
+    <div className="clearfix">
       <Stack direction="horizontal">
-        <div className="col-6">
-          Showing <b>5</b> out of <b>25</b> entries
+        <div className="hint-text col-6">
+          Showing <b>{perPage}</b> out of <b>{pages}</b> entries
         </div>
-        <div className="col-6" style={{display: "flex", justifyContent: "flex-end"}}>
+        <div
+          className="col-6"
+          style={{ display: "flex", justifyContent: "flex-end" }}
+        >
           <ul className="pagination">
             <li
               className={
@@ -41,7 +45,7 @@ const Pagination = ({ pages, setCurrentPage }) => {
                 <li
                   key={index}
                   className={
-                    currentButton === page ? "page-item-active" : "page-item"
+                    currentButton === page ? "page-item active" : "page-item"
                   }
                 >
                   <a
@@ -76,7 +80,7 @@ const Pagination = ({ pages, setCurrentPage }) => {
           </ul>
         </div>
       </Stack>
-    </>
+    </div>
   );
 };
 export default Pagination;

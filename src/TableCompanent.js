@@ -49,15 +49,10 @@ const TableCompanent = ({ data, column, searchable }) => {
       setTempdata(sorted);
       setOrder("ASC");
     }
-    // if (order === "NRML") {
-    //   const sorted = [...data];
-    //   setTempdata(sorted);
-    //   setOrder("ASC");
-    // }
   };
 
   return (
-    <div>
+    <div className="container">
       {/* Search için true degeri gelirse Input gösterir */}
       {searchable && (
         <div class="d-flex justify-content-end">
@@ -68,13 +63,12 @@ const TableCompanent = ({ data, column, searchable }) => {
             type="text"
             value={search}
             onChange={onFilterData}
-            //onChange={(e) => onFilterData(e.target.value)}
           />
         </div>
       )}
 
-      <Table className="table">
-        <thead>
+      <Table hover className="table mt-3" style={{backgroundColor:"aliceblue"}} >
+        <thead style={{backgroundColor:"#b4cde3"}}>
           <tr>
             {column.map((item) => (
               <>

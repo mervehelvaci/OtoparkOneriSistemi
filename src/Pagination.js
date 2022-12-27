@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import React, { Component } from "react";
+import { Stack } from "react-bootstrap";
 
-const Pagination = ({pages,setCurrentPage}) => {
+const Pagination = ({ pages, setCurrentPage }) => {
   const numOfPages = [];
 
   for (let i = 1; i <= pages; i++) {
@@ -8,67 +10,73 @@ const Pagination = ({pages,setCurrentPage}) => {
   }
   const [currentButton, setCurrentButton] = useState(1);
 
-  useEffect(()=> {
-    setCurrentPage(currentButton)
-  },[currentButton,setCurrentPage])
+  useEffect(() => {
+    setCurrentPage(currentButton);
+  }, [currentButton, setCurrentPage]);
   return (
-    <div className="clearfix">
-      <div className="hinttext">
-        Showing <b>5</b> out of <b>25</b> entries
-      </div>
-      <ul className="pagination">
-        <li
-          className={currentButton === 1 ? "page-item disabled" : "page-item"}
-        >
-          <a
-            href="#!"
-            className="page-link"
-            onClick={() =>
-              setCurrentButton((prev) => (prev === 1 ? prev : prev - 1))
-            }
-          >
-            Previous
-          </a>
-        </li>
-        {numOfPages.map((page, index) => {
-          return (
+    <>
+      <Stack direction="horizontal">
+        <div className="col-6">
+          Showing <b>5</b> out of <b>25</b> entries
+        </div>
+        <div className="col-6" style={{display: "flex", justifyContent: "flex-end"}}>
+          <ul className="pagination">
             <li
-              key={index}
               className={
-                currentButton === page ? "page-item-active" : "page-item"
+                currentButton === 1 ? "page-item disabled" : "page-item"
               }
             >
               <a
                 href="#!"
-                class="page-link"
-                onClick={() => setCurrentButton(page)}
+                className="page-link"
+                onClick={() =>
+                  setCurrentButton((prev) => (prev === 1 ? prev : prev - 1))
+                }
               >
-                {page}{" "}
+                Previous
               </a>
             </li>
-          );
-        })}
-        <li
-          className={
-            currentButton === numOfPages.length
-              ? "page-item disabled"
-              : "page-item"
-          }
-        >
-          <a
-            href="#!"
-            className="page-link"
-            onClick={() =>
-              setCurrentButton((prev) =>
-                prev === numOfPages.length ? prev : prev + 1
-              )
-            }
-          >
-            Next
-          </a>
-        </li>
-      </ul>
-    </div>
+            {numOfPages.map((page, index) => {
+              return (
+                <li
+                  key={index}
+                  className={
+                    currentButton === page ? "page-item-active" : "page-item"
+                  }
+                >
+                  <a
+                    href="#!"
+                    className="page-link"
+                    onClick={() => setCurrentButton(page)}
+                  >
+                    {page}{" "}
+                  </a>
+                </li>
+              );
+            })}
+            <li
+              className={
+                currentButton === numOfPages.length
+                  ? "page-item disabled"
+                  : "page-item"
+              }
+            >
+              <a
+                href="#!"
+                className="page-link"
+                onClick={() =>
+                  setCurrentButton((prev) =>
+                    prev === numOfPages.length ? prev : prev + 1
+                  )
+                }
+              >
+                Next
+              </a>
+            </li>
+          </ul>
+        </div>
+      </Stack>
+    </>
   );
 };
 export default Pagination;

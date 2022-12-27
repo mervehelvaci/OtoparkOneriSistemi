@@ -1,6 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 function Navi() {
   const navigate = useNavigate();
 
@@ -12,53 +17,29 @@ function Navi() {
   };
 
   return (
-    <div className="container">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light, justify-content-center">
-        <a className="navbar-brand" href="http://localhost:3000/home">
-          Ana Sayfa
-        </a>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item, justify-content-end">
-              <FaUserCircle
-                className="d-flex justify-content-end "
-                size="50"
-                color="blue"
-                onClick={logOut}
-              />
-            </li>
-            <li className="nav-item dropdown,justify-content-end">
-              <a
-                className="nav-link dropdown-toggle"
-                href=""
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                User
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="/">
-                  Log Out
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    // <div class="d-flex justify-content-between">
-    //   <h2 class="align-items-center">Ana Sayfa</h2>
-    //   <FaUserCircle
-    //     class="d-flex justify-content-end "
-    //     size="50"
-    //     color="blue"
-    //     onClick={logOut}
-    //   />
-    //   <h4>Çıkış Yap</h4>
-    // </div>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 export default Navi;

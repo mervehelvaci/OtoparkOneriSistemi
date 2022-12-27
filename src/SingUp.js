@@ -56,11 +56,11 @@ function SingUp() {
   };
 
   return (
-    <div class="container ">
-      <div class="row height:100vh">
-        <div class="col-md-3 mx-auto">
+    <div className="container ">
+      <div className="row height:100vh">
+        <div className="col-md-3 mx-auto my-auto">
           <h2>Sing Up </h2>
-          <Form class="bg-blue" onSubmit={onSingUp}>
+          <Form className="bg-blue" onSubmit={onSingUp}>
             <FormGroup>
               <Label for="exampleName">Name</Label>
               <Input
@@ -116,11 +116,11 @@ function SingUp() {
                 onChange={(e) => setUser({ ...user, website: e.target.value })}
               />
             </FormGroup>
-            <Button type="submit" class="btn btn-info btn-lg btn-block" onClick={onSingUp}>
+            <Button type="submit" className="btn btn-info btn-lg btn-block" onClick={onSingUp}>
               Save
             </Button>
           </Form>
-          {error !== "" ? <div className="error text-danger">{error}</div> : ""}
+          {error !== "" ? <div classNameName="error text-danger">{error}</div> : ""}
         </div>
       </div>
     </div>

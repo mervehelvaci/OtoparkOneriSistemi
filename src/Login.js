@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input } from "reactstrap";
+import Button from 'react-bootstrap/Button';
 import { useNavigate, Link } from "react-router-dom";
+import { Stack } from "react-bootstrap";
 
 function Login() {
   const [user, setUser] = useState({ name: "", username: "" });
@@ -40,11 +42,18 @@ function Login() {
   };
 
   return (
-    <div class="container ">
-      <div class="row height:100vh">
-        <div class="col-md-3 mx-auto">
-          <h2 class="text-justify">Login</h2>
-          <Form class="bg-blue"onSubmit={onLogin}>
+    <div
+    className="mx-auto"
+      style={{
+        height: "100vh",
+        display: "flex",
+        alignItems: "center"
+      }}
+    >
+      <div className="container">
+        <div className="col-md-3 mx-auto">
+          <h2 className="text-justify">Login</h2>
+          <Form className="bg-blue" onSubmit={onLogin}>
             <FormGroup>
               <Label for="exampleName">Name</Label>
               <Input
@@ -68,12 +77,16 @@ function Login() {
               />
             </FormGroup>
             <FormGroup>
-              <Button type="submit"  class="btn btn-primary" onClick={onLogin}>
-                Login
-              </Button>
-              <Button class="btn btn-secondary">
+              <Stack direction="horizontal" gap={3} style={{display: "flex", justifyContent:"center"}}>
+              
+              <Button variant="light">
                 <Link to="/SingUp">Sing Up</Link>
               </Button>
+              <Button variant="success" onClick={onLogin}>
+                Login
+              </Button>
+              </Stack>
+             
             </FormGroup>
           </Form>
           {error !== "" ? <div className="error text-danger">{error}</div> : ""}

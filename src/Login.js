@@ -13,15 +13,14 @@ function Login() {
 
   //Giriş bilgilerini kontrol eder giriş yapar
   const onLogin = (e) => {
-    e.preventDefault();
-    console.log(user);
-    const model = user;
-
     //Inputlar boş mu kontrol eder
     if (user.name === "" || user.username === "") {
       setError("Lütfen tüm alanları doldurunuz!");
       return;
     } else {
+      e.preventDefault();
+      console.log(user);
+      const model = user;
       localStorage.setItem("name", user.name);
       localStorage.setItem("username", user.username);
 

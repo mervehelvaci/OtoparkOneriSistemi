@@ -55,7 +55,7 @@ const TableCompanent = ({ data, column, searchable }) => {
     <div className="container">
       {/* Search için true degeri gelirse Input gösterir */}
       {searchable && (
-        <div class="d-flex justify-content-end">
+        <div className="d-flex justify-content-end">
           <Input
             id="search"
             name="search"

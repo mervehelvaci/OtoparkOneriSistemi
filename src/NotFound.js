@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import Image from "react-bootstrap/Image";
 
 export default class NotFound extends Component {
   render() {
     return (
-      <div>
-        <h2>Not Found</h2>
-        <Link to="/">Ana Sayfaya Dön</Link>
+      <div style={{ display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh"
+        }}>
+        <Image src="/images/error-page.jpg" alt="Not Found" />
       </div>
-    )
+    );
   }
 }

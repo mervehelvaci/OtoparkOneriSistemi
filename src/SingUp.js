@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
-import { useNavigate } from "react-router-dom";
+import { Stack } from "react-bootstrap";
+import { useNavigate, Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import "./style.css";
@@ -119,11 +120,14 @@ function SingUp() {
               />
             </FormGroup>
             <FormGroup>
-              <div className="end">
+              <Stack className="end" direction="horizontal" gap="3">
+                <Button variant="light">
+                  <Link to="/">Back</Link>
+                </Button>
                 <Button type="submit" variant="success" onClick={onSingUp}>
                   Save
                 </Button>
-              </div>
+              </Stack>
             </FormGroup>
           </Form>
           {error !== "" ? <div className="text-danger">{error}</div> : ""}

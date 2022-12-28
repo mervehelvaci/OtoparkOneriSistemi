@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NotFound from "./NotFound";
 import Login from "./Login";
 import Home from "./Home";
+import HomeContact from "./HomeContact";
 import EmployeeList from "./EmployeeList";
 import Iletisim from "./Iletisim";
 import SingUp from "./SingUp";
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/singup" element={<SingUp />} />
         <Route path="/home" element={<Home />}>
-          {/* <Route path="/categorylist" element={<CategoryList />} /> */}
+          <Route path="/home/Contact" element={<HomeContact />}/>
           <Route path="/home/EmployeeList" element={<EmployeeList />} />
           <Route path="/home/Iletisim" element={<Iletisim />} />
         </Route>

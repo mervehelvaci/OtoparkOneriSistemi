@@ -11,7 +11,7 @@ export default function EmployeeList() {
   /*kategorileri doldur */
   useEffect(() => {
     getEmployees();
-  },[]);
+  }, []);
 
   /*json ile verileri getirmek*/
   const getEmployees = () => {
@@ -40,9 +40,20 @@ export default function EmployeeList() {
   const totalPagesNum = Math.ceil(employees.length / employeesPerPage);
   return (
     <div>
-      <h2>{employeeInfo.title}</h2>
-      <TableCompanent searchable={true} data={currentEmployees} column={column} />
-      <Pagination pages={totalPagesNum} setCurrentPage={setCurrentPage} perPage={employeesPerPage} />
+      <h2 className="itemCenter">
+        <br />
+        {employeeInfo.title}
+      </h2>
+      <TableCompanent
+        searchable={true}
+        data={currentEmployees}
+        column={column}
+      />
+      <Pagination
+        pages={totalPagesNum}
+        setCurrentPage={setCurrentPage}
+        perPage={employeesPerPage}
+      />
     </div>
   );
 }

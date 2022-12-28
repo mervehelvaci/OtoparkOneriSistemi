@@ -6,7 +6,10 @@ export default class CategoryList extends Component {
   render() {
     return (
       <div>
-        <h2>{this.props.info.title}</h2>
+        <h2 className="itemCenter">
+          <br />
+          {this.props.info.title}
+        </h2>
         <ListGroup>
           <ListGroupItem>
             <Link to="EmployeeList">User</Link>

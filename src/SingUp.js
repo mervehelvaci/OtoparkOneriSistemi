@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Label, Input} from "reactstrap";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import { AiOutlineUserAdd } from "react-icons/ai";
+import "./style.css";
 
 function SingUp() {
   const [user, setUser] = useState({
@@ -16,10 +18,6 @@ function SingUp() {
 
   //Kayıt işlemi
   const onSingUp = (e) => {
-    e.preventDefault();
-    console.log(user);
-    const model = user;
-
     //Inputlar boş mu kontrol eder
     if (
       user.name === "" ||
@@ -31,6 +29,9 @@ function SingUp() {
       setError("Lütfen tüm alanları doldurunuz!");
       return;
     } else {
+      e.preventDefault();
+      console.log(user);
+      const model = user;
       localStorage.setItem("name", user.name);
       localStorage.setItem("username", user.username);
       localStorage.setItem("email", user.email);
@@ -58,16 +59,9 @@ function SingUp() {
 
   return (
     <div className="container ">
-      <div
-        className="mx-auto"
-        style={{
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <div className="col-md-3 mx-auto">
-          <h2>Sing Up </h2>
+      <div className="formCenter mx-auto">
+        <div className="form col-md-3 mx-auto">
+          <AiOutlineUserAdd className="formIcon mx-auto" />
           <Form className="bg-blue" onSubmit={onSingUp}>
             <FormGroup>
               <Label for="exampleName">Name</Label>
@@ -127,16 +121,13 @@ function SingUp() {
             <Button
               type="submit"
               variant="success"
-              onClick={onSingUp} style={{ display: "flex", justifyContent: "end" }}
+              onClick={onSingUp}
+              style={{ display: "flex", justifyContent: "end" }}
             >
               Save
             </Button>
           </Form>
-          {error !== "" ? (
-            <div className="text-danger">{error}</div>
-          ) : (
-            ""
-          )}
+          {error !== "" ? <div className="text-danger">{error}</div> : ""}
         </div>
       </div>
     </div>

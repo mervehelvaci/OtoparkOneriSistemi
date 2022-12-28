@@ -3,7 +3,7 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 import Button from "react-bootstrap/Button";
 import { useNavigate, Link } from "react-router-dom";
 import { Stack } from "react-bootstrap";
-import { FiUser } from "react-icons/fi";
+import { AiOutlineUser } from "react-icons/ai";
 import "./style.css";
 
 function Login() {
@@ -46,7 +46,7 @@ function Login() {
     <div className="container">
       <div className="formCenter mx-auto ">
         <div className="form col-md-3 mx-auto">
-          <FiUser className="formIcon mx-auto" />
+          <AiOutlineUser className="formIcon mx-auto" />
           <Form onSubmit={onLogin}>
             <FormGroup>
               <Label for="exampleName">Name</Label>

@@ -3,6 +3,7 @@ import { Form, FormGroup, Label, Input } from "reactstrap";
 import Button from "react-bootstrap/Button";
 import { useNavigate, Link } from "react-router-dom";
 import { Stack } from "react-bootstrap";
+import { FiUser } from "react-icons/fi";
 
 function Login() {
   const [user, setUser] = useState({ name: "", username: "" });
@@ -51,9 +52,23 @@ function Login() {
           alignItems: "center",
         }}
       >
-        <div className="col-md-3 mx-auto">
-          <h2 style={{ display: "flex", justifyContent: "center" }}>Login</h2>
-          <Form className="bg-blue" onSubmit={onLogin}>
+        <div
+          className="col-md-3 mx-auto"
+          style={{
+            backgroundColor: "aliceblue",
+            borderRadius: "10%",
+          }}
+        >
+          <FiUser
+            size="70"
+            color="black"
+            className="mx-auto"
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          />
+          <Form onSubmit={onLogin}>
             <FormGroup>
               <Label for="exampleName">Name</Label>
               <Input

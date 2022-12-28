@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import { useNavigate, Link } from "react-router-dom";
 import { Stack } from "react-bootstrap";
 import { FiUser } from "react-icons/fi";
+import "./style.css";
 
 function Login() {
   const [user, setUser] = useState({ name: "", username: "" });
@@ -44,30 +45,9 @@ function Login() {
 
   return (
     <div className="container">
-      <div
-        className="mx-auto"
-        style={{
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <div
-          className="col-md-3 mx-auto"
-          style={{
-            backgroundColor: "aliceblue",
-            borderRadius: "10%",
-          }}
-        >
-          <FiUser
-            size="70"
-            color="black"
-            className="mx-auto"
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          />
+      <div className="formCenter mx-auto ">
+        <div className="form col-md-3 mx-auto">
+          <FiUser className="formIcon mx-auto" />
           <Form onSubmit={onLogin}>
             <FormGroup>
               <Label for="exampleName">Name</Label>
@@ -92,11 +72,7 @@ function Login() {
               />
             </FormGroup>
             <FormGroup>
-              <Stack
-                direction="horizontal"
-                gap={3}
-                style={{ display: "flex", justifyContent: "end" }}
-              >
+              <Stack className="end" direction="horizontal" gap="3">
                 <Button variant="light">
                   <Link to="/SingUp">Sing Up</Link>
                 </Button>

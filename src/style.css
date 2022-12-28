@@ -1,0 +1,25 @@
+
+.form{
+    background-color: aliceblue;
+    border-radius: 10%
+}
+
+.formCenter{
+    height: 100vh;
+    display: flex;
+    align-items: center
+}
+
+.formIcon{
+    font-size:70px;
+    color:black;
+    display: flex;
+    align-items: center
+}
+
+.end{
+    direction:horizontal;
+    gap: 3px;
+    display: flex;
+    justify-content: end 
+}

@@ -4,8 +4,9 @@
     border-radius: 5%
 }
 
-.formCenter{
+.itemCenter{
     height: 100vh;
+    justify-content: center;
     display: flex;
     align-items: center
 }
@@ -18,8 +19,6 @@
 }
 
 .end{
-    direction:horizontal;
-    gap: 3px;
     display: flex;
     justify-content: end 
 }

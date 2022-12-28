@@ -60,7 +60,7 @@ function SingUp() {
 
   return (
     <div className="container ">
-      <div className="formCenter mx-auto">
+      <div className="itemCenter mx-auto">
         <div className="form col-md-3 mx-auto">
           <AiOutlineUserAdd className="formIcon mx-auto" />
           <Form className="bg-blue" onSubmit={onSingUp}>

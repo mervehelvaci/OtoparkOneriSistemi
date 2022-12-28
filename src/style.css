@@ -7,12 +7,16 @@
 .fullScreen{
     height: 100vh;
 }
+
 .itemCenter{
     justify-content: center;
     display: flex;
     align-items: center
 }
 
+.block{
+    display: inline-block
+}
 .formIcon{
     font-size:70px;
     color:black;

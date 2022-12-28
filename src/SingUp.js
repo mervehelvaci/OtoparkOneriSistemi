@@ -118,14 +118,13 @@ function SingUp() {
                 onChange={(e) => setUser({ ...user, website: e.target.value })}
               />
             </FormGroup>
-            <Button
-              type="submit"
-              variant="success"
-              onClick={onSingUp}
-              style={{ display: "flex", justifyContent: "end" }}
-            >
-              Save
-            </Button>
+            <FormGroup>
+              <div className="end">
+                <Button type="submit" variant="success" onClick={onSingUp}>
+                  Save
+                </Button>
+              </div>
+            </FormGroup>
           </Form>
           {error !== "" ? <div className="text-danger">{error}</div> : ""}
         </div>

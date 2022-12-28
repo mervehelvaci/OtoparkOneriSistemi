@@ -23,3 +23,10 @@
     display: flex;
     justify-content: end 
 }
+
+.table{
+    background-color:aliceblue
+}
+.tableHead{
+    background-color:#b4cde3
+}

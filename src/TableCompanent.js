@@ -55,7 +55,7 @@ const TableCompanent = ({ data, column, searchable }) => {
     <div className="container">
       {/* Search için true degeri gelirse Input gösterir */}
       {searchable && (
-        <div className="d-flex justify-content-end">
+        <div>
           <Input
             id="search"
             name="search"
@@ -67,8 +67,8 @@ const TableCompanent = ({ data, column, searchable }) => {
         </div>
       )}
 
-      <Table hover className="table mt-3" style={{backgroundColor:"aliceblue"}} >
-        <thead style={{backgroundColor:"#b4cde3"}}>
+      <Table hover className="table mt-3">
+        <thead className="tableHead">
           <tr>
             {column.map((item) => (
               <>
@@ -93,7 +93,7 @@ const TableCompanent = ({ data, column, searchable }) => {
 const TableHeadItem = ({ item, sorting }) => {
   return (
     <th onClick={() => sorting(item.value)}>
-      {item.heading} <AiOutlineSortAscending size="30" color="black" />
+      {item.heading} <AiOutlineSortAscending size="25" color="black" />
     </th>
   );
 };

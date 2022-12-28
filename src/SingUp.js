@@ -60,7 +60,7 @@ function SingUp() {
 
   return (
     <div className="container ">
-      <div className="itemCenter mx-auto">
+      <div className="itemCenter fullScreen mx-auto">
         <div className="form col-md-3 mx-auto">
           <AiOutlineUserAdd className="formIcon mx-auto" />
           <Form className="bg-blue" onSubmit={onSingUp}>
@@ -124,7 +124,7 @@ function SingUp() {
                 <Button variant="light">
                   <Link to="/">Back</Link>
                 </Button>
-                <Button type="submit" variant="success" onClick={onSingUp}>
+                <Button variant="success" onClick={onSingUp}>
                   Save
                 </Button>
               </Stack>

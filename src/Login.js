@@ -44,7 +44,7 @@ function Login() {
 
   return (
     <div className="container">
-      <div className="itemCenter mx-auto ">
+      <div className="itemCenter fullScreen mx-auto ">
         <div className="form col-md-3 mx-auto">
           <AiOutlineUser className="formIcon mx-auto" />
           <Form onSubmit={onLogin}>

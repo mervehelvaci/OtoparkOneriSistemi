@@ -3,7 +3,7 @@ import CategoryList from "./CategoryList";
 import Navi from "./Navi";
 import { Col, Container, Row } from "reactstrap";
 import { Outlet } from "react-router-dom";
-import HomeContect from "./HomeContact";
+import HomeContact from "./HomeContact";
 
 export default class Home extends Component {
   state = {

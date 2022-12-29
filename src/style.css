@@ -33,16 +33,23 @@
 
 .end{
     display: flex;
-    justify-content: end 
-}
-.endd{
-
-    justify-content: end 
+    justify-content: end;  
 }
 
 .table{
     background-color:aliceblue
 }
+
 .tableHead{
     background-color:#b4cde3
 }
+
+.navEnd{
+        display:flex ;
+        justify-content: space-between ;      
+}
+
+.fullWith{
+     width: 100% 
+}
+

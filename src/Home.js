@@ -12,7 +12,6 @@ export default class Home extends Component {
 
   render() {
     /*props örnek. Propslar companentler arası aktarılabilir*/
-    let categoryInfo = { title: "Category List" };
     return (
       <div>
         {/*Reactstrap install ile indirilip import ile entegre edilir*/}
@@ -23,11 +22,10 @@ export default class Home extends Component {
               <CategoryList
                 currentCategory={this.state.currentCategory}
                 changeCategory={this.changeCategory}
-                info={categoryInfo}
               />
             </Col>
             <Col xs="9">
-              <HomeContact/>
+              <HomeContact />
               <Outlet />
             </Col>
           </Row>

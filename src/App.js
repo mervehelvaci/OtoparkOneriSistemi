@@ -5,7 +5,7 @@ import Login from "./Login";
 import Home from "./Home";
 import HomeContact from "./HomeContact";
 import EmployeeList from "./EmployeeList";
-import Iletisim from "./Iletisim";
+import Contact from "./Contact";
 import SingUp from "./SingUp";
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/singup" element={<SingUp />} />
         <Route path="/home" element={<Home />}>
-          <Route path="/home/Contact" element={<HomeContact />}/>
+          <Route path="/home/HomeContact" element={<HomeContact />}/>
           <Route path="/home/EmployeeList" element={<EmployeeList />} />
-          <Route path="/home/Iletisim" element={<Iletisim />} />
+          <Route path="/home/Contact" element={<Contact />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

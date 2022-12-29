@@ -15,7 +15,7 @@ export default class CategoryList extends Component {
             <Link to="EmployeeList">User</Link>
           </ListGroupItem>
           <ListGroupItem>
-            <Link to="Iletisim">İletişim</Link>
+            <Link to="Contact">İletişim</Link>
           </ListGroupItem>
         </ListGroup>
       </div>

@@ -5,7 +5,9 @@ import "./style.css";
 function HomeContect() {
   return (
     <div className="container">
-      <Image src="/images/people.jpg" alt="Not Found" className="itemCenter" />
+      <div className="itemCenter">
+        <Image src="/images/people.jpg" alt="Not Found image" />
+      </div>
       <h2 className="itemCenter">Home</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis pariatur

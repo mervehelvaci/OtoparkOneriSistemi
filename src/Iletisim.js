@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup } from "react-bootstrap";
+import { Form, FormGroup, Col, Row } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import { MdMail } from "react-icons/md";
 import { FaAddressBook, FaPhoneAlt } from "react-icons/fa";
@@ -13,22 +13,40 @@ function Iletisim() {
   });
   return (
     <div>
-      <Image src="/images/contact.png" alt="Not Found" className="itemCenter" />
-      <h2 className="itemCenter">İletişime Geç<br/></h2>
+      <div className="itemCenter">
+        <Image src="/images/contact.png" alt="Contact image" />
+      </div>
+      <h2 className="itemCenter">
+        İletişime Geç
+        <br />
+        <br />
+      </h2>
       <Form>
-      <div class="form-row">
-      <FormGroup>
-          <MdMail className="pageIcon" />
-          <p>{user.email}</p>
-        </FormGroup>
-        <FormGroup>
-          <FaPhoneAlt className="pageIcon" />
-          <p>{user.phone}</p>
-        </FormGroup>
-        <FormGroup>
-          <FaAddressBook className="pageIcon" />
-          <p>{user.address}</p>
-        </FormGroup>
+        <div class="form-row">
+          <Row>
+            <Col xs="1">
+              <MdMail className="pageIcon" />
+            </Col>
+            <Col xs="4">
+              <p>{user.email}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="1">
+              <FaPhoneAlt className="pageIcon" />
+            </Col>
+            <Col xs="4">
+              <p>{user.phone}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="1">
+              <FaAddressBook className="pageIcon" />
+            </Col>
+            <Col xs="4">
+              <p>{user.address}</p>
+            </Col>
+          </Row>
         </div>
       </Form>
     </div>

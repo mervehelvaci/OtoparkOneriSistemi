@@ -7,22 +7,26 @@ import HomeContact from "./HomeContact";
 import EmployeeList from "./EmployeeList";
 import Contact from "./Contact";
 import SingUp from "./SingUp";
+import { createContext, useContext } from "react";
+import { useState } from "react";
+import { GlobalProvider } from "./GlobalState";
 
 function App() {
-  // yorum satırı ctrl+k ctrl+c basarak olur
   return (
     <div className="App">
-      {/*Reactstrap install ile indirilip import ile entegre edilir*/}
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/singup" element={<SingUp />} />
-        <Route path="/home" element={<Home />}>
-          <Route path="/home/HomeContact" element={<HomeContact />}/>
-          <Route path="/home/EmployeeList" element={<EmployeeList />} />
-          <Route path="/home/Contact" element={<Contact />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <GlobalProvider>
+        {/*Reactstrap install ile indirilip import ile entegre edilir*/}
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/singup" element={<SingUp />} />
+          <Route path="/home" element={<Home />}>
+            <Route path="/home/HomeContact" element={<HomeContact />} />
+            <Route path="/home/EmployeeList" element={<EmployeeList />} />
+            <Route path="/home/Contact" element={<Contact />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </GlobalProvider>
     </div>
   );
 }

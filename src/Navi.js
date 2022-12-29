@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiUserGroup } from "react-icons/hi";
 import { BiUserCircle } from "react-icons/bi";
@@ -6,9 +6,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { GlobalContext } from "./GlobalState";
 function Navi() {
   const navigate = useNavigate();
-
+  const { setSvalue } = useContext(GlobalContext);
   //Çıkış yap
   const logOut = () => {
     localStorage.setItem("name", "");
@@ -27,7 +28,14 @@ function Navi() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto navEnd fullWith">
             <div>
-              <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link
+                href="/home"
+                onClick={() => {
+                  setSvalue(true);
+                }}
+              >
+                Home
+              </Nav.Link>
             </div>
             <div className="navEnd">
               <BiUserCircle size="50" color="rgb(221 85 37)" />

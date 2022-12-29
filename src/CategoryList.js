@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext }from "react";
 import { Link } from "react-router-dom";
 import { ListGroup, ListGroupItem } from "reactstrap";
+import { GlobalContext } from "./GlobalState";
 
 function CategoryList() {
+  const {setSvalue}=useContext(GlobalContext);
   return (
     <div>
       <h2 className="itemCenter">
@@ -11,7 +13,7 @@ function CategoryList() {
       </h2>
       <ListGroup>
         <ListGroupItem>
-          <Link to="EmployeeList" >
+          <Link to="EmployeeList" onClick={()=>{setSvalue(false);}} >
             User
           </Link>
         </ListGroupItem>

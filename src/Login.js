@@ -32,10 +32,10 @@ function Login() {
         .then((response) => response.json())
         .then((result) => {
           if (result.id != null) {
-            alert("You are logged in.");
+            alert("Giriş yaptınız.");
             navigate("/home");
           } else {
-            alert("Please check your login iformation");
+            alert("Lütfen giriş bilgilerinizi kontrol edin!");
           }
         })
         .catch((err) => console.log(err));

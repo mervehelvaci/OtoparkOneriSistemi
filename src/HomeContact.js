@@ -10,12 +10,10 @@ function HomeContect() {
       </div>
       <h2 className="itemCenter">Home</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis pariatur
-        ratione magnam eos cumque laborum, totam ipsum quae possimus, assumenda
-        nam nisi doloribus unde accusantium! Vel sed ipsum laborum beatae! Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolore ex
-        voluptatum modi molestiae dolor voluptatem rem unde omnis aut ipsum
-        impedit reiciendis officiis optio incidunt, quam quod explicabo itaque.
+        Bu websitesinin amacı kayıtlı kullanıcıların bilgilerini listelemektir.
+        Website Layout yapısına göre sayfa bölümlere ayrılmıştır. Arka planda
+        çalışan kodun dinamik bir yapıda olması için çalışılmıştır. Kullanıcılar
+        kayıt olur.
       </p>
     </div>
   );

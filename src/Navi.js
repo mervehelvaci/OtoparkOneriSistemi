@@ -34,7 +34,7 @@ function Navi() {
                   setSvalue(true);
                 }}
               >
-                Home
+                Ana Sayfa
               </Nav.Link>
             </div>
             <div className="navEnd">

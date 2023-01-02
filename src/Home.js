@@ -1,4 +1,4 @@
-import React, { Component, useContext } from "react";
+import React, { useContext } from "react";
 import CategoryList from "./CategoryList";
 import Navi from "./Navi";
 import { Col, Container, Row } from "reactstrap";

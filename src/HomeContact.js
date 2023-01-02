@@ -8,7 +8,7 @@ function HomeContect() {
       <div className="itemCenter">
         <Image src="/images/people.jpg" alt="Not Found image" />
       </div>
-      <h2 className="itemCenter">Home</h2>
+      <h2 className="itemCenter">Ana Sayfa</h2>
       <p>
         Bu websitesinin amacı kayıtlı kullanıcıların bilgilerini listelemektir.
         Website Layout yapısına göre sayfa bölümlere ayrılmıştır. Arka planda

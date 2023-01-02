@@ -7,8 +7,6 @@ import HomeContact from "./HomeContact";
 import EmployeeList from "./EmployeeList";
 import Contact from "./Contact";
 import SingUp from "./SingUp";
-import { createContext, useContext } from "react";
-import { useState } from "react";
 import { GlobalProvider } from "./GlobalState";
 
 function App() {

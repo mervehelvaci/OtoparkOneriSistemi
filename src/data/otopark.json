@@ -1,0 +1,106 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "carId": "1",
+                "name": "Armada Otopark",
+                "address": "Kentpark, 1546. Cd. No:1, 06540 Çankaya/Ankara",
+                "county": "Çankaya",
+                "emptySpace": 25
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.922788,
+                    32.854736
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "carId": "2",
+                "name": "Kızılay Otoparkı",
+                "address": "Atatürk Blv. No:119, 06660 Çankaya/Ankara",
+                "county": "Çankaya",
+                "emptySpace": 7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.924350,
+                    32.852170
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "carId": "3",
+                "name": "Kuğulu Park Otoparkı",
+                "address": "Tunalı Hilmi Cd. No:103, 06670 Çankaya/Ankara",
+                "county": "Çankaya",
+                "emptySpace": 12
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.919684,
+                    32.856054
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "carId": "4",
+                "name": "Ankara Adliyesi Otoparkı",
+                "address": "Aşağı Öveçler Mahallesi, Milli Müdafaa Cd. No:16, 06290 Altındağ/Ankara",
+                "county": "Altındağ",
+                "emptySpace": 3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.921502,
+                    32.853654
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "carId": "5",
+                "name": "Tunalı Hilmi Caddesi Otoparkı",
+                "address": "Tunalı Hilmi Cd., 06680 Çankaya/Ankara",
+                "county": "Çankaya",
+                "emptySpace": 8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.880703,
+                    32.861843
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "carId": "6",
+                "name": "Çankaya Belediyesi Otoparkı",
+                "address": "Akay Mahallesi, Nenehatun Cd. No:50, 06670 Çankaya/Ankara",
+                "county": "Çankaya",
+                "emptySpace": 14
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.881240,
+                    32.870705
+                ]
+            }
+        }
+    ]
+}

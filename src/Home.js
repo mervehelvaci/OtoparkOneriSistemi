@@ -11,19 +11,18 @@ function Home() {
   return (
     <div>
       {/*Reactstrap install ile indirilip import ile entegre edilir*/}
-      <Container>
-        <Navi />
-        <Row>
-          <Col xs="3">
-            <CategoryList />
-          </Col>
-          <Col xs="9">
-            {svalue === true ? <HomeContact /> : <Outlet />}
-            {/* <HomeContact />
+<Container>
+      <Navi />
+      <Row>
+        <Col xs="3">
+          <CategoryList />
+        </Col>
+        <Col xs="9">
+          {svalue === true ? <HomeContact /> : <Outlet />}
+          {/* <HomeContact />
             <Outlet /> */}
-          </Col>
-        </Row>
-      </Container>
+        </Col>
+      </Row></Container>
     </div>
   );
 }

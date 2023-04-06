@@ -15,12 +15,12 @@ function App() {
       <GlobalProvider>
         {/*Reactstrap install ile indirilip import ile entegre edilir*/}
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/singup" element={<SingUp />} />
-          <Route path="/home" element={<Home />}>
-            <Route path="/home/HomeContact" element={<HomeContact />} />
+          <Route path="/" element={<Home />}>
+            <Route path="/HomeContact" element={<HomeContact />} />
             <Route path="/home/EmployeeList" element={<EmployeeList />} />
-            <Route path="/home/Contact" element={<Contact />} />
+            <Route path="/Contact" element={<Contact />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

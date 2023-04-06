@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { HiUserGroup } from "react-icons/hi";
-import { BiUserCircle } from "react-icons/bi";
+//import { HiUserGroup } from "react-icons/hi";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -16,20 +15,19 @@ function Navi() {
     localStorage.setItem("username", "");
     navigate("/");
   };
-
+//<HiUserGroup size="70" color="rgb(221 85 37)" /> icon kullanımı
   return (
     <Navbar bg="light" expand="lg">
-      <Container>
-        <HiUserGroup size="70" color="rgb(221 85 37)" />
+      <Container>   
         <Navbar.Brand href="/home">
-          &nbsp;&nbsp;Kullanıcı Listeleme
+          &nbsp;&nbsp;Otopark Öneri Sistemi
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto navEnd fullWith">
             <div>
               <Nav.Link
-                href="/home"
+                href="/"
                 onClick={() => {
                   setSvalue(true);
                 }}
@@ -38,9 +36,8 @@ function Navi() {
               </Nav.Link>
             </div>
             <div className="navEnd">
-              <BiUserCircle size="50" color="rgb(221 85 37)" />
               <NavDropdown title="User" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Sing Up</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Another action
                 </NavDropdown.Item>

@@ -14,7 +14,7 @@ function CategoryList() {
       <ListGroup>
         <ListGroupItem>
           <Link to="EmployeeList" onClick={()=>{setSvalue(false);}} >
-            Kullanıcı Listesi
+            ..
           </Link>
         </ListGroupItem>
         <ListGroupItem>

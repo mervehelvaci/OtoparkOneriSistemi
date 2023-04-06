@@ -6,7 +6,7 @@ export default function EmployeeList() {
   let employeeInfo = { title: "Employee List" };
   const [employees, setEmployees] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); //hangi sayfadan baslayacak bunu belirttik
-  const [employeesPerPage] = useState(4); //sayfada kaç veri listelenecek onu belirttik
+  const [employeesPerPage] = useState(6); //sayfada kaç veri listelenecek onu belirttik
 
   /*kategorileri doldur */
   useEffect(() => {

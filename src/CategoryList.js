@@ -13,8 +13,8 @@ function CategoryList() {
       </h2>
       <ListGroup>
         <ListGroupItem>
-          <Link to="EmployeeList" onClick={()=>{setSvalue(false);}} >
-            ..
+          <Link to="SingUp" onClick={()=>{setSvalue(false);}} >
+            Otopark Kaydet
           </Link>
         </ListGroupItem>
         <ListGroupItem>

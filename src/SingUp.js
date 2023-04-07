@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Label, Input } from "reactstrap";
+import { Form, FormGroup, Input } from "reactstrap";
 import { Stack } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
@@ -65,58 +65,53 @@ function SingUp() {
           <AiOutlineUserAdd className="formIcon mx-auto" />
           <Form className="bg-blue" onSubmit={onSingUp}>
             <FormGroup>
-              <Label for="exampleName">Name</Label>
-              <Input
+            <Input
                 id="name"
                 name="name"
-                placeholder="Enter name"
+                placeholder="Carpark Name"
                 type="text"
                 value={user.name}
                 onChange={(e) => setUser({ ...user, name: e.target.value })}
               />
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleUserName">User Name</Label>
               <Input
                 id="username"
                 name="username"
-                placeholder="Enter user name"
+                placeholder="Carpark Address"
                 type="text"
                 value={user.username}
                 onChange={(e) => setUser({ ...user, username: e.target.value })}
               />
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleEmail">Email</Label>
-              <Input
-                id="email"
-                name="email"
-                placeholder="Enter email"
-                type="email"
-                value={user.email}
-                onChange={(e) => setUser({ ...user, email: e.target.value })}
-              />
-            </FormGroup>
-            <FormGroup>
-              <Label for="examplePhone">Phone</Label>
-              <Input
-                id="phone"
-                name="phone"
-                placeholder="Enter phone"
+               <Input
+                id="username"
+                name="username"
+                placeholder="Carpark Country"
                 type="text"
-                value={user.phone}
-                onChange={(e) => setUser({ ...user, phone: e.target.value })}
+                value={user.username}
+                onChange={(e) => setUser({ ...user, username: e.target.value })}
               />
-            </FormGroup>
-            <FormGroup>
-              <Label for="exampleWebsite">Website</Label>
               <Input
-                id="website"
-                name="website"
-                placeholder="Enter website"
+                id="username"
+                name="username"
+                placeholder="Carpark Empty space"
                 type="text"
-                value={user.website}
-                onChange={(e) => setUser({ ...user, website: e.target.value })}
+                value={user.username}
+                onChange={(e) => setUser({ ...user, username: e.target.value })}
+              />
+              <Input
+                id="username"
+                name="username"
+                placeholder="Carpark cordinates"
+                type="text"
+                value={user.username}
+                onChange={(e) => setUser({ ...user, username: e.target.value })}
+              />
+              <Input
+                id="username"
+                name="username"
+                placeholder="Carpark cordinates"
+                type="text"
+                value={user.username}
+                onChange={(e) => setUser({ ...user, username: e.target.value })}
               />
             </FormGroup>
             <FormGroup>
